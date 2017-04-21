@@ -26,7 +26,7 @@
     data: "{{ item.data | default(omit) }}"
     url: "{{ item.url | default(omit) }}"
     state: "present"
-  with_items: galera_client_gpg_keys
+  with_items: "{{ galera_client_gpg_keys }}"
   register: add_keys
   until: add_keys|success
   retries: 5
